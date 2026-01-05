@@ -171,17 +171,17 @@ function showResults() {
     const percentage = (score / questions.length) * 100;
     
     if (percentage === 100) {
-        message = 'Sempurna! Kamu jenius! 🌟';
+        message = 'impressive';
     } else if (percentage >= 80) {
-        message = 'Luar biasa! Hasil yang bagus! 🎉';
+        message = 'Hasil yang mantap';
     } else if (percentage >= 60) {
-        message = 'Bagus! Terus tingkatkan! 👍';
+        message = 'Bagus namun perlu sedikit belajar lagi';
     } else if (percentage >= 40) {
-        message = 'Cukup baik, terus belajar! 📚';
+        message = 'Cukup bagus namun perlu di tingkatkan lagi';
     } else {
-        message = 'Jangan menyerah, coba lagi! 💪';
+        message = 'Terus berusaha & terus belajar';
     }
-    
+
     resultMessageEl.textContent = message;
     resultModal.classList.add('active');
 }
@@ -207,4 +207,5 @@ retryBtn.addEventListener('click', retryQuiz);
 homeBtn.addEventListener('click', goHome);
 
 // Start quiz
+
 initQuiz();
