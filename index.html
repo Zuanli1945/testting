@@ -1,1 +1,33 @@
-<a href="Landing_page.html">Teks Tautan</a>
+<style>
+.btn-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background: white;
+    color: #667eea;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.btn-arrow::after {
+    content: '→';
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-arrow:hover {
+    background: #667eea;
+    color: white;
+    transform: translateX(5px);
+}
+
+.btn-arrow:hover::after {
+    transform: translateX(5px);
+}
+</style>
+
+<a href="Landing_page.html" class="btn-arrow">Ke Landing Page</a>
