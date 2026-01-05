@@ -130,19 +130,19 @@ function loadQuestion() {
 
 // Check answer
 function checkAnswer(selectedIndex) {
-    if (answered) return;
+    if(answered) return;
     
     answered = true;
     const question = questions[currentQuestion];
     
     answerBtns.forEach((btn, index) => {
         btn.disabled = true;
-        if (index === question.correct) {
+        if(index === question.correct) {
             btn.classList.add('correct');
         }
     });
     
-    if (selectedIndex === question.correct) {
+    if(selectedIndex === question.correct) {
         score++;
         scoreEl.textContent = score;
     } else {
@@ -156,7 +156,7 @@ function checkAnswer(selectedIndex) {
 function nextQuestion() {
     currentQuestion++;
     
-    if (currentQuestion < questions.length) {
+    if(currentQuestion < questions.length) {
         loadQuestion();
     } else {
         showResults();
@@ -170,18 +170,18 @@ function showResults() {
     let message = '';
     const percentage = (score / questions.length) * 100;
     
-    if (percentage === 100) {
-        message = 'impressive';
-    } else if (percentage >= 80) {
-        message = 'Hasil yang mantap';
-    } else if (percentage >= 60) {
+    if(percentage === 100) {
+        message = 'Impressive!';
+    } else if(percentage >= 80) {
+        message = 'Hasil yang mantap!';
+    } else if(percentage >= 60) {
         message = 'Bagus namun perlu sedikit belajar lagi';
-    } else if (percentage >= 40) {
+    } else if(percentage >= 40) {
         message = 'Cukup bagus namun perlu di tingkatkan lagi';
     } else {
         message = 'Terus berusaha & terus belajar';
     }
-
+    
     resultMessageEl.textContent = message;
     resultModal.classList.add('active');
 }
@@ -207,5 +207,4 @@ retryBtn.addEventListener('click', retryQuiz);
 homeBtn.addEventListener('click', goHome);
 
 // Start quiz
-
 initQuiz();
